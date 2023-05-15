@@ -8,11 +8,8 @@ public class ValidationTask {
     Set<Validator> validators;
     private String machineCode;
 
-    public ValidationTask(Set<Validator> validators){
+    public ValidationTask(Set<Validator> validators, String machineCode){
         this.validators = validators;
-    }
-
-    public void setMachineCode(String machineCode) {
         this.machineCode = machineCode;
     }
 
