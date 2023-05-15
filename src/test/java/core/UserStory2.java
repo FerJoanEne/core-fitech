@@ -48,7 +48,7 @@ public class UserStory2 {
     public void CA3() throws FileNotFoundException {
         log.warn("se ejecuta test de CA3 - CARPETA VACIA");
         CoreFitech coreFitech = new CoreFitech(new File("emptyFolder").getAbsolutePath(), "Bicicleta1");
-        int size = coreFitech.sizeSetValidators();
+        int size = coreFitech.getValidators().size();
         assertEquals(0, size);
         log.warn("cantidad de validators: {}", size);
     }
@@ -57,7 +57,7 @@ public class UserStory2 {
     public void CA4() throws FileNotFoundException {
         log.warn("se ejecuta test de CA4 - VALIDACIONES MULTIPLES");
         CoreFitech coreFitech = new CoreFitech(new File("").getAbsolutePath(), "Bicicleta1");
-        int size = coreFitech.sizeSetValidators();
+        int size = coreFitech.getValidators().size();
         assertEquals(2, size);
         log.warn("cantidad de validators: {}", size);
     }
