@@ -18,10 +18,10 @@ public class CoreFitech  implements Observable, Observer{
     public CoreFitech(String path, String machineCode) throws FileNotFoundException {
         System.out.println("\u001B[31mCuando se inicia el Core isValid es: "+isValid+"\u001B[0m");
         this.validationTask = new ValidatorFactory().create(path, machineCode);
-        this.addObservables();
+        this.addObserver();
     }
 
-    private void addObservables(){
+    private void addObserver(){
         for(Validator validator : validationTask.getValidators()){
             if(Observable.class.isAssignableFrom(validator.getClass())){
                 validator.addObserver(this);
