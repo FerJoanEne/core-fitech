@@ -25,7 +25,7 @@ public class UserStory2 {
 
     @Test
     public void CA1(){
-        log.warn("se ejecuta test de CA1 - FileNotFoundException");
+        log.warn("se ejecuta test de CA1 - UBICACION INEXISTENTE");
         FileNotFoundException fileNotFoundException = assertThrows(FileNotFoundException.class, () -> {
             new CoreFitech("", "Bicicleta1");
         });
@@ -36,7 +36,7 @@ public class UserStory2 {
 
     @Test
     public void CA2() {
-        log.warn("se ejecuta test de CA2 - IllegalArgumentException");
+        log.warn("se ejecuta test de CA2 - UBICACION INVALIDA");
         IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class, () -> {
             new CoreFitech("\\videos", "Bicicleta1");
         });
@@ -55,8 +55,29 @@ public class UserStory2 {
 
     @Test
     public void CA4() throws FileNotFoundException {
-        log.warn("se ejecuta test de CA4 - VALIDACIONES MULTIPLES");
-        CoreFitech coreFitech = new CoreFitech(new File("").getAbsolutePath(), "Bicicleta1");
+        log.warn("se ejecuta test de CA4 - NO ES VALIDACION");
+        File file = new File("src/test/noEsValidacion");
+        CoreFitech coreFitech = new CoreFitech(file.getAbsolutePath(), "Bicicleta1");
+        int size = coreFitech.getValidators().size();
+        assertEquals(0, size);
+        log.warn("cantidad de validators: {}", size);
+    }
+
+    @Test
+    public void CA5() throws FileNotFoundException {
+        log.warn("se ejecuta test de CA5 - VALIDACION SIMPLE");
+        File file = new File("src/test/validacionSimple");
+        CoreFitech coreFitech = new CoreFitech(file.getAbsolutePath(), "Bicicleta1");
+        int size = coreFitech.getValidators().size();
+        assertEquals(1, size);
+        log.warn("cantidad de validators: {}", size);
+    }
+
+    @Test
+    public void CA6() throws FileNotFoundException {
+        log.warn("se ejecuta test de CA6 - VALIDACIONES MULTIPLES");
+        File file = new File("src/test/validacionMultiple");
+        CoreFitech coreFitech = new CoreFitech(file.getAbsolutePath(), "Bicicleta1");
         int size = coreFitech.getValidators().size();
         assertEquals(2, size);
         log.warn("cantidad de validators: {}", size);
