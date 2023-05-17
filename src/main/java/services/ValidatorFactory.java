@@ -7,8 +7,14 @@ import java.util.Set;
 
 public class ValidatorFactory {
 
-    public ValidationTask create(String path, String machineCode) throws FileNotFoundException {
+    private ValidationTask validationTask;
+
+    public ValidatorFactory(String path, String machineCode) throws FileNotFoundException {
         Set<Validator> validators = new ValidatorFinder().findValidators(path);
-        return new ValidationTask(validators, machineCode);
+        this.validationTask = new ValidationTask(validators, machineCode);
+    }
+
+    public ValidationTask getValidationTask() {
+        return validationTask;
     }
 }

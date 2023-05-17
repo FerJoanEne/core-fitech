@@ -23,24 +23,23 @@ public class ValidatorFinder {
         checkPath(path);
         Set<Validator> result = new HashSet<>();
         File[] files = getFiles(path);
-        if(files!=null){
+        if (files != null) {
             for (File f : files) {
-                if (f.getName().endsWith(".jar")){
+                if (f.getName().endsWith(".jar")) {
                     log.info("file encontrado: " + f.getName());
                     getValidator(result, f);
                 }
             }
-        }
-        else {
+        } else {
             log.error("ubicacion invalida");
             throw new IllegalArgumentException("ubicacion invalida");
         }
-        log.info("Cantidad de clases instanciadas: "+ result.size());
+        log.info("Cantidad de clases instanciadas: " + result.size());
         return result;
     }
 
     private void getValidator(Set<Validator> result, File f) {
-        try{
+        try {
             JarFile jar = new JarFile(f);
             Enumeration<JarEntry> entries = jar.entries();
 
@@ -48,21 +47,21 @@ public class ValidatorFinder {
 
             List<Class<?>> classes = new ArrayList<>();
 
-            while(entries.hasMoreElements()){
+            while (entries.hasMoreElements()) {
                 JarEntry jarEntry = entries.nextElement();
-                if(jarEntry.isDirectory() || !jarEntry.getName().endsWith(".class")){
+                if (jarEntry.isDirectory() || !jarEntry.getName().endsWith(".class")) {
                     continue;
                 }
-                String className = jarEntry.getName().substring(0,jarEntry.getName().length()-6);
-                className = className.replace('/','.');
-                classes.add( classLoader.loadClass(className));
+                String className = jarEntry.getName().substring(0, jarEntry.getName().length() - 6);
+                className = className.replace('/', '.');
+                classes.add(classLoader.loadClass(className));
             }
             log.info("Lista de Clases Encontradas: size {} - clases {} ", classes.size(), classes);
 
             classes.forEach(possibleValidator -> {
-                if (!Validator.class.isAssignableFrom(possibleValidator) || possibleValidator.isInterface()){
+                if (!Validator.class.isAssignableFrom(possibleValidator) || possibleValidator.isInterface()) {
                     log.warn("{} No asignable", possibleValidator.getName());
-                }else{
+                } else {
                     log.info("{} Asignable", possibleValidator.getName());
                     try {
                         result.add((Validator) possibleValidator.newInstance());
@@ -80,25 +79,25 @@ public class ValidatorFinder {
         }
     }
 
-    private File[] getFiles(String path){
+    private File[] getFiles(String path) {
         File[] files = new File[0];
-        try{
-            log.info("path del file: " + path+File.separator+"validators");
+        try {
+            log.info("path del file: " + path + File.separator + "validators");
             File file = new File(path + File.separator + "validators");
-            if(file.exists()){
+            if (file.exists()) {
                 files = file.listFiles();
-                log.info("cantidad de archivos listados: {}", files!=null?files.length:0);
-            }else{
+                log.info("cantidad de archivos listados: {}", files != null ? files.length : 0);
+            } else {
                 return null;
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             log.error("no se pudo leer lista de archivos");
         }
         return files;
     }
 
     private void checkPath(String path) throws FileNotFoundException {
-        if(path == null || path.equals("")){
+        if (path == null || path.equals("")) {
             log.error("el path es invalido");
             throw new FileNotFoundException("el path es invalido");
         }
