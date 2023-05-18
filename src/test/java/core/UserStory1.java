@@ -1,12 +1,16 @@
 package core;
 
+import interfaces.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import services.ValidationTask;
+import services.ValidatorFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -14,40 +18,46 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class UserStory1 {
 
-    private Logger log = LogManager.getLogger("UserStory1");
-    CoreFitech coreFitech = new CoreFitech(new File("").getAbsolutePath(), "Bicicleta1");
-
-    public UserStory1() throws FileNotFoundException {
-    }
+    private final Logger log = LogManager.getLogger("UserStory1");
+    private Validator routineValidator;
+    private ValidationTask validationTask;
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws FileNotFoundException {
+        String path = new File("").getAbsolutePath()+"\\src\\test\\validacionSimple\\validators";
+        String machineCode = "Bicicleta1";
+        log.info("path: {}", path);
+        log.info("machineCode: {}", machineCode);
+
+        this.validationTask = new ValidatorFactory().buildValidationTask(path, machineCode);
+        Set<Validator> validators = this.validationTask.getValidators();
+        routineValidator = validators.stream().findFirst().get();
+
+        validationTask = new ValidationTask(validators, "Bicicleta1");
     }
 
     @Test
-    public void CA1(){
+    public void CA1() throws InterruptedException {
         log.warn("se ejecuta test de CA1 con dato de entrada: Tahiel");
-        //coreFitech.processRequest("Tahiel", "routine");
-        /*boolean isValidPerson = coreFitech.getResult();
-        log.warn("result CA1: {}", isValidPerson);
-        assertTrue(isValidPerson);*/
+        routineValidator.validate("Tahiel", "Bicicleta1");
+        Thread.sleep(4000);
+        assertTrue(routineValidator.getResult());
     }
 
     @Test
-    public void CA2() {
+    void CA2() throws InterruptedException {
         log.warn("se ejecuta test de CA2 - con dato de entrada: Evelyn");
-        //coreFitech.processRequest("Evelyn", "routine");
-       /* boolean notRoutine = coreFitech.getResult();
-        log.warn("result CA2: {}", notRoutine);
-        assertFalse(notRoutine);*/
+       routineValidator.validate("Evelyn", "Bicicleta1");
+        Thread.sleep(4000);
+        assertFalse(routineValidator.getResult());
     }
 
     @Test
-    public void CA3() {
+    void CA3() throws InterruptedException {
         log.warn("se ejecuta test de CA3 - con dato de entrada: '' ");
-        //coreFitech.processRequest("", "routine");
-       /* boolean invalidPerson = coreFitech.getResult();
-        log.warn("result CA3: {}", invalidPerson);
-        assertFalse(invalidPerson);*/
+        routineValidator.validate("", "Bicicleta1");
+        Thread.sleep(4000);
+        assertFalse(routineValidator.getResult());
     }
+
 }

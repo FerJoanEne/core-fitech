@@ -20,10 +20,12 @@ public class ValidatorFinder {
     }
 
     public Set<Validator> findValidators(String path) throws FileNotFoundException {
-        checkPath(path);
         Set<Validator> result = new HashSet<>();
         File[] files = getFiles(path);
-        if (files != null) {
+        if(files == null){
+            throw new IllegalArgumentException("ubicacion invalida");
+        }
+        if (files.length != 0) {
             for (File f : files) {
                 if (f.getName().endsWith(".jar")) {
                     log.info("file encontrado: " + f.getName());
@@ -92,12 +94,5 @@ public class ValidatorFinder {
             log.error("no se pudo leer lista de archivos");
         }
         return files;
-    }
-
-    private void checkPath(String path) throws FileNotFoundException {
-        if (path == null || path.equals("")) {
-            log.error("el path es invalido");
-            throw new FileNotFoundException("el path es invalido");
-        }
     }
 }

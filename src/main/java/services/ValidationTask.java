@@ -28,9 +28,7 @@ public class ValidationTask implements Observable, Observer {
 
     private void addAsObserver() {
         for (Validator validator : this.validators) {
-            if (Observable.class.isAssignableFrom(validator.getClass())) {
                 validator.addObserver(this);
-            }
         }
     }
 
@@ -79,5 +77,9 @@ public class ValidationTask implements Observable, Observer {
 
     @Override
     public void update(Boolean result) {
+    }
+
+    public Set<Validator> getValidators(){
+        return this.validators;
     }
 }
