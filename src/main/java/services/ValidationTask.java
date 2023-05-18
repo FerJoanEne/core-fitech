@@ -8,9 +8,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ValidationTask implements Observable, Observer {
-    private Set<Validator> validators;
-    private String machineCode;
+    private final Set<Validator> validators;
+    private final String machineCode;
     private final Set<Observer> observers;
+
 
     public ValidationTask(Set<Validator> validators, String machineCode) {
         this.validators = validators;
@@ -24,16 +25,6 @@ public class ValidationTask implements Observable, Observer {
             validator.validate(userName, this.machineCode);
         }
     }
-
-    /*public void isValid(Validator validator){
-        if (!validator.getResult()) {
-            System.out.println("Falló el " + validator.getClass().getName());
-            result = false;
-            break; // Detener la iteración si hay un fallo
-        } else {
-            System.out.println("Pasó el " + validator.getClass().getName());
-        }
-    }*/
 
     private void addAsObserver() {
         for (Validator validator : this.validators) {

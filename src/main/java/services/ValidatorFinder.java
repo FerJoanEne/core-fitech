@@ -27,7 +27,7 @@ public class ValidatorFinder {
             for (File f : files) {
                 if (f.getName().endsWith(".jar")) {
                     log.info("file encontrado: " + f.getName());
-                    getValidator(result, f);
+                    loadValidators(result, f);
                 }
             }
         } else {
@@ -38,21 +38,19 @@ public class ValidatorFinder {
         return result;
     }
 
-    private void getValidator(Set<Validator> result, File f) {
+    private void loadValidators(Set<Validator> result, File jarFile) {
         try {
-            JarFile jar = new JarFile(f);
+            JarFile jar = new JarFile(jarFile);
             Enumeration<JarEntry> entries = jar.entries();
-
-            URLClassLoader classLoader = new URLClassLoader(new URL[]{f.toURI().toURL()});
-
+            URLClassLoader classLoader = new URLClassLoader(new URL[]{jarFile.toURI().toURL()});
             List<Class<?>> classes = new ArrayList<>();
 
             while (entries.hasMoreElements()) {
-                JarEntry jarEntry = entries.nextElement();
-                if (jarEntry.isDirectory() || !jarEntry.getName().endsWith(".class")) {
+                JarEntry entry = entries.nextElement();
+                if (entry.isDirectory() || !entry.getName().endsWith(".class")) {
                     continue;
                 }
-                String className = jarEntry.getName().substring(0, jarEntry.getName().length() - 6);
+                String className = entry.getName().substring(0, entry.getName().length() - 6);
                 className = className.replace('/', '.');
                 classes.add(classLoader.loadClass(className));
             }
@@ -82,8 +80,8 @@ public class ValidatorFinder {
     private File[] getFiles(String path) {
         File[] files = new File[0];
         try {
-            log.info("path del file: " + path + File.separator + "validators");
-            File file = new File(path + File.separator + "validators");
+            log.info("path del file: " + path);
+            File file = new File(path);
             if (file.exists()) {
                 files = file.listFiles();
                 log.info("cantidad de archivos listados: {}", files != null ? files.length : 0);
@@ -102,5 +100,4 @@ public class ValidatorFinder {
             throw new FileNotFoundException("el path es invalido");
         }
     }
-
 }
