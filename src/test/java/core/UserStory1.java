@@ -24,7 +24,7 @@ public class UserStory1 {
 
     @BeforeEach
     public void setUp() throws FileNotFoundException {
-        String path = new File("").getAbsolutePath()+"\\src\\test\\validacionSimple\\validators";
+        String path = new File("").getAbsolutePath() + "\\src\\test\\validacionSimple\\validators";
         String machineCode = "Bicicleta1";
         log.info("path: {}", path);
         log.info("machineCode: {}", machineCode);
@@ -47,7 +47,7 @@ public class UserStory1 {
     @Test
     void CA2() throws InterruptedException {
         log.warn("se ejecuta test de CA2 - con dato de entrada: Evelyn");
-       routineValidator.validate("Evelyn", "Bicicleta1");
+        routineValidator.validate("Evelyn", "Bicicleta1");
         Thread.sleep(4000);
         assertFalse(routineValidator.getResult());
     }
