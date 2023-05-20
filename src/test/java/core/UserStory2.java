@@ -67,7 +67,7 @@ public class UserStory2 {
     @Test
     public void CA5() throws FileNotFoundException {
         log.warn("se ejecuta test de CA5 - VALIDACION SIMPLE");
-        String path = new File("testValidators\\validacionSimple").getAbsolutePath();
+        String path = new File("validacionSimple").getAbsolutePath();
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(1, size);

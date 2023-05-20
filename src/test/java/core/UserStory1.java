@@ -24,7 +24,7 @@ public class UserStory1 {
 
     @BeforeEach
     public void setUp() throws  FileNotFoundException {
-        String path = new File("testValidators\\validacionSimple").getAbsolutePath();
+        String path = new File("validacionSimple").getAbsolutePath();
         String machineCode = "Bicicleta1";
         log.info("path: {}", path);
         log.info("machineCode: {}", machineCode);
