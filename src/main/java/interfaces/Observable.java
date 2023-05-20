@@ -1,7 +1,9 @@
 package interfaces;
 
-public interface Observable {
+import java.util.HashSet;
+import java.util.Set;
 
+public interface Observable {
     void addObserver(Observer observer);
 
     void removeObserver(Observer observer);
