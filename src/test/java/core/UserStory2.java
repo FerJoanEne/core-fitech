@@ -49,7 +49,7 @@ public class UserStory2 {
     @Test
     public void CA3() throws FileNotFoundException {
         log.warn("se ejecuta test de CA3 - CARPETA VACIA");
-        String path = new File("").getAbsolutePath() + "\\src\\test\\emptyFolder";
+        String path = new File("testValidators\\emptyFolder").getAbsolutePath();
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(0, size);
@@ -58,7 +58,7 @@ public class UserStory2 {
     @Test
     public void CA4() throws FileNotFoundException {
         log.warn("se ejecuta test de CA4 - NO ES VALIDACION");
-        String path = new File("").getAbsolutePath() + "\\src\\test\\noEsValidacion\\validators";
+        String path = new File("testValidators\\noEsValidacion").getAbsolutePath();
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(0, size);
@@ -67,7 +67,7 @@ public class UserStory2 {
     @Test
     public void CA5() throws FileNotFoundException {
         log.warn("se ejecuta test de CA5 - VALIDACION SIMPLE");
-        String path = new File("").getAbsolutePath() + "\\src\\test\\validacionSimple\\validators";
+        String path = new File("testValidators\\validacionSimple").getAbsolutePath();
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(1, size);
@@ -76,7 +76,7 @@ public class UserStory2 {
     @Test
     public void CA6() throws FileNotFoundException {
         log.warn("se ejecuta test de CA6 - VALIDACIONES MULTIPLES");
-        String path = new File("").getAbsolutePath() + "\\src\\test\\validacionMultiple\\validators";
+        String path = new File("validators").getAbsolutePath();
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(2, size);
