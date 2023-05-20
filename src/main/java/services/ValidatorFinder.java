@@ -27,9 +27,6 @@ public class ValidatorFinder {
             throw new FileNotFoundException("ubicacion inexistente");
         }
         File[] files = getFiles(path);
-        if(files == null){
-            throw new IllegalArgumentException("ubicacion invalida");
-        }
         if (files.length != 0) {
             for (File file : files) {
                 if (file.getName().endsWith(".jar")) {
@@ -83,17 +80,13 @@ public class ValidatorFinder {
 
     private File[] getFiles(String path) {
         File[] files = new File[0];
-        try {
-            log.info("path del file: " + path);
-            File file = new File(path);
-            if (file.exists()) {
-                files = file.listFiles();
-                log.info("cantidad de archivos listados: {}", files != null ? files.length : 0);
-            } else {
-                return null;
-            }
-        } catch (Exception e) {
-            log.error("no se pudo leer lista de archivos");
+        File file = new File(path);
+        if (file.exists() && file.isDirectory()) {
+            files = file.listFiles();
+            log.info("cantidad de archivos listados: {}", files != null ? files.length : 0);
+        }
+        else {
+            throw new IllegalArgumentException("ubicacion invalida");
         }
         return files;
     }

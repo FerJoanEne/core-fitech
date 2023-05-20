@@ -1,7 +1,9 @@
 package core;
 
 //java
+
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +14,6 @@ import services.ValidatorFinder;
 //custom imports
 import java.io.File;
 import java.io.FileNotFoundException;
-
 
 
 public class UserStory2 {
@@ -27,7 +28,7 @@ public class UserStory2 {
     }
 
     @Test
-    public void CA1(){
+    public void CA1() {
         log.warn("se ejecuta test de CA1 - UBICACION INEXISTENTE");
         validatorFinder = new ValidatorFinder("");
         assertThrows(FileNotFoundException.class, () -> {
@@ -39,7 +40,7 @@ public class UserStory2 {
     @Test
     public void CA2() {
         log.warn("se ejecuta test de CA2 - UBICACION INVALIDA");
-        validatorFinder = new ValidatorFinder("\\videos");
+        validatorFinder = new ValidatorFinder("\\jhjgh");
         assertThrows(IllegalArgumentException.class, () -> {
             validatorFinder.findValidators();
         });
@@ -49,7 +50,8 @@ public class UserStory2 {
     @Test
     public void CA3() throws FileNotFoundException {
         log.warn("se ejecuta test de CA3 - CARPETA VACIA");
-        String path = new File("testValidators\\emptyFolder").getAbsolutePath();
+        String currentDirectory = System.getProperty("user.dir");
+        String path = currentDirectory + File.separator + "validatorEmpty";
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(0, size);
@@ -58,7 +60,7 @@ public class UserStory2 {
     @Test
     public void CA4() throws FileNotFoundException {
         log.warn("se ejecuta test de CA4 - NO ES VALIDACION");
-        String path = new File("testValidators\\noEsValidacion").getAbsolutePath();
+        String path = new File("validatorIsNot").getAbsolutePath();
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(0, size);
@@ -67,7 +69,7 @@ public class UserStory2 {
     @Test
     public void CA5() throws FileNotFoundException {
         log.warn("se ejecuta test de CA5 - VALIDACION SIMPLE");
-        String path = new File("validacionSimple").getAbsolutePath();
+        String path = new File("validator").getAbsolutePath();
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(1, size);
