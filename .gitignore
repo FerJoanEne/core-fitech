@@ -3,6 +3,8 @@
 .gradle
 logs
 logs/
+test/reports
+/test/reports
 /.gradle/*
 /build
 /bin
