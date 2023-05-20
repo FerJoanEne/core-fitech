@@ -12,9 +12,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import static org.junit.jupiter.api.Assertions.*;
 
 public class UserStory1 {
 
@@ -23,11 +21,11 @@ public class UserStory1 {
     private ValidationTask validationTask;
 
     @BeforeEach
-    public void setUp() throws  FileNotFoundException {
+    public void setUp() throws FileNotFoundException {
         String path = new File("validator").getAbsolutePath();
         String machineCode = "Bicicleta1";
-        log.info("path: {}", path);
-        log.info("machineCode: {}", machineCode);
+        log.info("Path: {}", path);
+        log.info("MachineCode: {}", machineCode);
 
         this.validationTask = new ValidatorFactory(path, machineCode).buildValidationTask();
         Set<Validator> validators = this.validationTask.getValidators();
@@ -38,26 +36,26 @@ public class UserStory1 {
 
     @Test
     public void CA1() throws InterruptedException {
-        log.warn("se ejecuta test de CA1 con dato de entrada: Tahiel");
+        log.warn("Se ejecuta test de CA1 con dato de entrada: Tahiel");
         routineValidator.validate("Tahiel", "Bicicleta1");
-        Thread.sleep(4000);
-        assertTrue(routineValidator.getResult());
+        Thread.sleep(3000);
+        assertEquals(true, routineValidator.getResult());
     }
 
     @Test
     void CA2() throws InterruptedException {
-        log.warn("se ejecuta test de CA2 - con dato de entrada: Evelyn");
+        log.warn("Se ejecuta test de CA2 - con dato de entrada: Evelyn");
         routineValidator.validate("Evelyn", "Bicicleta1");
-        Thread.sleep(4000);
-        assertFalse(routineValidator.getResult());
+        Thread.sleep(3000);
+        assertEquals(false, routineValidator.getResult());
     }
 
     @Test
     void CA3() throws InterruptedException {
-        log.warn("se ejecuta test de CA3 - con dato de entrada: '' ");
+        log.warn("Se ejecuta test de CA3 - con dato de entrada: '' ");
         routineValidator.validate("", "Bicicleta1");
-        Thread.sleep(4000);
-        assertFalse(routineValidator.getResult());
+        Thread.sleep(3000);
+        assertEquals(false, routineValidator.getResult());
     }
 
 }

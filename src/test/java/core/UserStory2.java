@@ -1,19 +1,19 @@
 package core;
 
 //java
-
 import static org.junit.jupiter.api.Assertions.*;
 
+import interfaces.Validator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import services.ValidatorFactory;
 import services.ValidatorFinder;
 
 //custom imports
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Set;
 
 
 public class UserStory2 {
@@ -29,58 +29,53 @@ public class UserStory2 {
 
     @Test
     public void CA1() {
-        log.warn("se ejecuta test de CA1 - UBICACION INEXISTENTE");
+        log.warn("Se ejecuta test de CA1 - UBICACION INEXISTENTE");
         validatorFinder = new ValidatorFinder("");
-        assertThrows(FileNotFoundException.class, () -> {
-            validatorFinder.findValidators();
-        });
+        assertThrows(FileNotFoundException.class, validatorFinder::findValidators);
     }
 
 
     @Test
     public void CA2() {
-        log.warn("se ejecuta test de CA2 - UBICACION INVALIDA");
-        validatorFinder = new ValidatorFinder("\\jhjgh");
-        assertThrows(IllegalArgumentException.class, () -> {
-            validatorFinder.findValidators();
-        });
-
+        log.warn("Se ejecuta test de CA2 - UBICACION INVALIDA");
+        validatorFinder = new ValidatorFinder("\\randomfolder");
+        assertThrows(IllegalArgumentException.class, validatorFinder::findValidators);
     }
 
     @Test
     public void CA3() throws FileNotFoundException {
-        log.warn("se ejecuta test de CA3 - CARPETA VACIA");
+        log.warn("Se ejecuta test de CA3 - CARPETA VACIA");
         String currentDirectory = System.getProperty("user.dir");
         String path = currentDirectory + File.separator + "validatorEmpty";
         validatorFinder = new ValidatorFinder(path);
-        int size = validatorFinder.findValidators().size();
-        assertEquals(0, size);
+        Set<Validator> validators = validatorFinder.findValidators();
+        assertTrue(validators.isEmpty());
     }
 
     @Test
     public void CA4() throws FileNotFoundException {
-        log.warn("se ejecuta test de CA4 - NO ES VALIDACION");
+        log.warn("Se ejecuta test de CA4 - NO ES VALIDACION");
         String path = new File("validatorIsNot").getAbsolutePath();
         validatorFinder = new ValidatorFinder(path);
-        int size = validatorFinder.findValidators().size();
-        assertEquals(0, size);
+        Set<Validator> validators = validatorFinder.findValidators();
+        assertTrue(validators.isEmpty());
     }
 
     @Test
     public void CA5() throws FileNotFoundException {
-        log.warn("se ejecuta test de CA5 - VALIDACION SIMPLE");
+        log.warn("Se ejecuta test de CA5 - VALIDACION SIMPLE");
         String path = new File("validator").getAbsolutePath();
         validatorFinder = new ValidatorFinder(path);
-        int size = validatorFinder.findValidators().size();
-        assertEquals(1, size);
+        Set<Validator> validators = validatorFinder.findValidators();
+        assertEquals(1, validators.size());
     }
 
     @Test
     public void CA6() throws FileNotFoundException {
-        log.warn("se ejecuta test de CA6 - VALIDACIONES MULTIPLES");
+        log.warn("Se ejecuta test de CA6 - VALIDACIONES MULTIPLES");
         String path = new File("validators").getAbsolutePath();
         validatorFinder = new ValidatorFinder(path);
-        int size = validatorFinder.findValidators().size();
-        assertEquals(2, size);
+        Set<Validator> validators = validatorFinder.findValidators();
+        assertEquals(2, validators.size());
     }
 }

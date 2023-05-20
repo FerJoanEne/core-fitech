@@ -17,22 +17,18 @@ public class ValidatorFinder {
     private final Logger log = LogManager.getLogger("ValidatorFinder");
 
     private final String path;
+
     public ValidatorFinder(String path) {
         this.path = path;
     }
 
     public Set<Validator> findValidators() throws FileNotFoundException {
         Set<Validator> validators = new HashSet<>();
-        if(path == ""){
-            throw new FileNotFoundException("ubicacion inexistente");
-        }
         File[] files = getFiles(path);
-        if (files.length != 0) {
-            for (File file : files) {
-                if (file.getName().endsWith(".jar")) {
-                    log.info("file encontrado: " + file.getName());
-                    loadValidators(validators, file);
-                }
+        for (File file : files) {
+            if (file.getName().endsWith(".jar")) {
+                log.info("File encontrado: " + file.getName());
+                loadValidators(validators, file);
             }
         }
         log.info("Cantidad de clases instanciadas: " + validators.size());
@@ -45,7 +41,6 @@ public class ValidatorFinder {
             Enumeration<JarEntry> entries = jar.entries();
             URLClassLoader classLoader = new URLClassLoader(new URL[]{jarFile.toURI().toURL()});
             List<Class<?>> classes = new ArrayList<>();
-
             while (entries.hasMoreElements()) {
                 JarEntry entry = entries.nextElement();
                 if (entry.isDirectory() || !entry.getName().endsWith(".class")) {
@@ -78,16 +73,17 @@ public class ValidatorFinder {
         }
     }
 
-    private File[] getFiles(String path) {
-        File[] files = new File[0];
+    private File[] getFiles(String path) throws FileNotFoundException {
+        if (path.isEmpty()) {
+            throw new FileNotFoundException("Ubicacion inexistente");
+        }
         File file = new File(path);
         if (file.exists() && file.isDirectory()) {
-            files = file.listFiles();
-            log.info("cantidad de archivos listados: {}", files != null ? files.length : 0);
+            File[] files = file.listFiles();
+            log.info("Cantidad de archivos listados: {}", files != null ? files.length : 0);
+            return files != null ? files : new File[0];
+        } else {
+            throw new IllegalArgumentException("Ubicacion invalida");
         }
-        else {
-            throw new IllegalArgumentException("ubicacion invalida");
-        }
-        return files;
     }
 }
