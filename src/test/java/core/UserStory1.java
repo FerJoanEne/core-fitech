@@ -7,7 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import services.ValidationTask;
 import services.ValidatorFactory;
+import services.ValidatorFinder;
 
+import javax.xml.bind.ValidationException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Set;
@@ -23,13 +25,13 @@ public class UserStory1 {
     private ValidationTask validationTask;
 
     @BeforeEach
-    public void setUp() throws FileNotFoundException {
+    public void setUp() throws ValidationException {
         String path = new File("").getAbsolutePath() + "\\src\\test\\validacionSimple\\validators";
         String machineCode = "Bicicleta1";
         log.info("path: {}", path);
         log.info("machineCode: {}", machineCode);
 
-        this.validationTask = new ValidatorFactory().buildValidationTask(path, machineCode);
+        this.validationTask = new ValidatorFactory(path, machineCode).buildValidationTask();
         Set<Validator> validators = this.validationTask.getValidators();
         routineValidator = validators.stream().findFirst().get();
 

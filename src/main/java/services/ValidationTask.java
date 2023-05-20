@@ -10,13 +10,10 @@ import java.util.Set;
 public class ValidationTask implements Observable, Observer {
     private final Set<Validator> validators;
     private final String machineCode;
-    private final Set<Observer> observers;
-
 
     public ValidationTask(Set<Validator> validators, String machineCode) {
         this.validators = validators;
         this.machineCode = machineCode;
-        this.observers = new HashSet<>();
         this.addAsObserver();
     }
 

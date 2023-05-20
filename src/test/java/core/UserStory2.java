@@ -6,6 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import services.ValidatorFactory;
+import services.ValidatorFinder;
 
 //custom imports
 import java.io.File;
@@ -17,6 +19,7 @@ public class UserStory2 {
 
     private final Logger log = LogManager.getLogger("UserStory2");
 
+    private ValidatorFinder validatorFinder;
 
     @BeforeEach
     public void setUp() {
@@ -25,61 +28,57 @@ public class UserStory2 {
 
     @Test
     public void CA1(){
-    /*    log.warn("se ejecuta test de CA1 - UBICACION INEXISTENTE");
-        FileNotFoundException fileNotFoundException = assertThrows(FileNotFoundException.class, () -> {
-            new CoreFitech("", "Bicicleta1");
+        log.warn("se ejecuta test de CA1 - UBICACION INEXISTENTE");
+        validatorFinder = new ValidatorFinder("");
+        assertThrows(FileNotFoundException.class, () -> {
+            validatorFinder.findValidators();
         });
-
-        log.warn("mensaje de error CA1: {} ", fileNotFoundException.getMessage());*/
     }
 
 
     @Test
     public void CA2() {
         log.warn("se ejecuta test de CA2 - UBICACION INVALIDA");
-       /* IllegalArgumentException illegalArgumentException = assertThrows(IllegalArgumentException.class, () -> {
-            new CoreFitech("\\videos", "Bicicleta1");
+        validatorFinder = new ValidatorFinder("\\videos");
+        assertThrows(IllegalArgumentException.class, () -> {
+            validatorFinder.findValidators();
         });
 
-        log.warn("mensaje de error CA2: {} ", illegalArgumentException.getMessage());*/
     }
 
     @Test
     public void CA3() throws FileNotFoundException {
         log.warn("se ejecuta test de CA3 - CARPETA VACIA");
-        /*CoreFitech coreFitech = new CoreFitech(new File("emptyFolder").getAbsolutePath(), "Bicicleta1");
-        int size = coreFitech.getValidators().size();
+        String path = new File("").getAbsolutePath() + "\\src\\test\\emptyFolder";
+        validatorFinder = new ValidatorFinder(path);
+        int size = validatorFinder.findValidators().size();
         assertEquals(0, size);
-        log.warn("cantidad de validators: {}", size);*/
     }
 
     @Test
     public void CA4() throws FileNotFoundException {
         log.warn("se ejecuta test de CA4 - NO ES VALIDACION");
-        /*File file = new File("src/test/noEsValidacion");
-        CoreFitech coreFitech = new CoreFitech(file.getAbsolutePath(), "Bicicleta1");
-        int size = coreFitech.getValidators().size();
+        String path = new File("").getAbsolutePath() + "\\src\\test\\noEsValidacion\\validators";
+        validatorFinder = new ValidatorFinder(path);
+        int size = validatorFinder.findValidators().size();
         assertEquals(0, size);
-        log.warn("cantidad de validators: {}", size);*/
     }
 
     @Test
     public void CA5() throws FileNotFoundException {
         log.warn("se ejecuta test de CA5 - VALIDACION SIMPLE");
-        /*File file = new File("src/test/validacionSimple");
-        CoreFitech coreFitech = new CoreFitech(file.getAbsolutePath(), "Bicicleta1");
-        int size = coreFitech.getValidators().size();
+        String path = new File("").getAbsolutePath() + "\\src\\test\\validacionSimple\\validators";
+        validatorFinder = new ValidatorFinder(path);
+        int size = validatorFinder.findValidators().size();
         assertEquals(1, size);
-        log.warn("cantidad de validators: {}", size);*/
     }
 
     @Test
     public void CA6() throws FileNotFoundException {
         log.warn("se ejecuta test de CA6 - VALIDACIONES MULTIPLES");
-       /* File file = new File("src/test/validacionMultiple");
-        CoreFitech coreFitech = new CoreFitech(file.getAbsolutePath(), "Bicicleta1");
-        int size = coreFitech.getValidators().size();
+        String path = new File("").getAbsolutePath() + "\\src\\test\\validacionMultiple\\validators";
+        validatorFinder = new ValidatorFinder(path);
+        int size = validatorFinder.findValidators().size();
         assertEquals(2, size);
-        log.warn("cantidad de validators: {}", size);*/
     }
 }

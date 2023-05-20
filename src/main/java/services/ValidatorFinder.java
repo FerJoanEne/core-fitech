@@ -16,28 +16,30 @@ public class ValidatorFinder {
 
     private final Logger log = LogManager.getLogger("ValidatorFinder");
 
-    public ValidatorFinder() {
+    private final String path;
+    public ValidatorFinder(String path) {
+        this.path = path;
     }
 
-    public Set<Validator> findValidators(String path) throws FileNotFoundException {
-        Set<Validator> result = new HashSet<>();
+    public Set<Validator> findValidators() throws FileNotFoundException {
+        Set<Validator> validators = new HashSet<>();
+        if(path == ""){
+            throw new FileNotFoundException("ubicacion inexistente");
+        }
         File[] files = getFiles(path);
         if(files == null){
             throw new IllegalArgumentException("ubicacion invalida");
         }
         if (files.length != 0) {
-            for (File f : files) {
-                if (f.getName().endsWith(".jar")) {
-                    log.info("file encontrado: " + f.getName());
-                    loadValidators(result, f);
+            for (File file : files) {
+                if (file.getName().endsWith(".jar")) {
+                    log.info("file encontrado: " + file.getName());
+                    loadValidators(validators, file);
                 }
             }
-        } else {
-            log.error("ubicacion invalida");
-            throw new IllegalArgumentException("ubicacion invalida");
         }
-        log.info("Cantidad de clases instanciadas: " + result.size());
-        return result;
+        log.info("Cantidad de clases instanciadas: " + validators.size());
+        return validators;
     }
 
     private void loadValidators(Set<Validator> result, File jarFile) {
