@@ -2,7 +2,6 @@ package services;
 
 import interfaces.Validator;
 
-import javax.xml.bind.ValidationException;
 import java.io.FileNotFoundException;
 import java.util.Set;
 
@@ -15,12 +14,9 @@ public class ValidatorFactory {
         this.validatorFinder = new ValidatorFinder(path);
     }
 
-    public ValidationTask buildValidationTask() throws ValidationException {
-        try {
+    public ValidationTask buildValidationTask() throws FileNotFoundException {
             Set<Validator> validators = validatorFinder.findValidators();
             return new ValidationTask(validators, machineCode);
-        } catch (FileNotFoundException e) {
-            throw new ValidationException("Error al encontrar validadores: " + e.getMessage(), e);
-        }
+
     }
 }
