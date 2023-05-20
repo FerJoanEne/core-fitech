@@ -54,6 +54,7 @@ public class UserStory2 {
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(0, size);
+        log.warn("cantidad de validators: {}", size);
     }
 
     @Test
@@ -63,6 +64,7 @@ public class UserStory2 {
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(0, size);
+        log.warn("cantidad de validators: {}", size);
     }
 
     @Test
@@ -72,6 +74,7 @@ public class UserStory2 {
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(1, size);
+        log.warn("cantidad de validators: {}", size);
     }
 
     @Test
@@ -81,5 +84,6 @@ public class UserStory2 {
         validatorFinder = new ValidatorFinder(path);
         int size = validatorFinder.findValidators().size();
         assertEquals(2, size);
+        log.warn("cantidad de validators: {}", size);
     }
 }
