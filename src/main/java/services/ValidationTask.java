@@ -3,14 +3,16 @@ package services;
 import interfaces.Observable;
 import interfaces.Observer;
 import interfaces.Validator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public class ValidationTask implements Observable, Observer {
+
+    private final Logger log = LogManager.getLogger("ValidationTask");
     private final Set<Validator> validators;
     private final String machineCode;
-    private final Set<Observer> observers = new HashSet<>();;
 
     public ValidationTask(Set<Validator> validators, String machineCode) {
         this.validators = validators;
@@ -57,20 +59,14 @@ public class ValidationTask implements Observable, Observer {
         boolean result = true;
         for (Validator validator : this.validators) {
             if (!validator.getResult()) {
-                System.out.println("Falló el " + validator.getClass().getName());
+                log.info("Falló el validador: {}", validator.getClass().getName());
                 result = false;
                 break; // Detener la iteración si hay un fallo
             }
-            System.out.println("Pasó el " + validator.getClass().getName());
+            log.info("Pasó el validador: {}", validator.getClass().getName());
         }
         this.notifyObservers(result);
-        //System.out.println("\u001B[31mEl resultado de Core era "+result + "y ahora es "+result+"\u001B[0m");
-        System.out.println("\u001B[31mResultado es " + result + "\u001B[0m");
-        /*if(isValid == null || isValid != result){
-            isValid = result;
-            System.out.println("\u001B[31mAsi que notifico a la UI\u001B[0m");
-            notifyObservers();
-        }*/
+        log.info("\u001B[31mResultado de la validación es: {}\u001B[0m", result);
     }
 
     @Override

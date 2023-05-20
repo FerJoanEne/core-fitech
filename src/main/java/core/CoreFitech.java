@@ -2,7 +2,6 @@ package core;
 
 import services.ValidationTask;
 import services.ValidatorFactory;
-import services.ValidatorFinder;
 
 import java.io.FileNotFoundException;
 
@@ -16,6 +15,6 @@ public class CoreFitech {
     }
 
     public ValidationTask getValidationTask() {
-        return this.getValidationTask();
+        return this.validationTask;
     }
 }
