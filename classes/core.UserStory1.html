@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">3</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">9.072s</div>
+<div class="counter">12.173s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,18 +78,23 @@
 </tr>
 </thead>
 <tr>
-<td class="success">CA1()</td>
-<td class="success">3.034s</td>
+<td class="success">CA1_UsoValido()</td>
+<td class="success">3.018s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">CA2()</td>
-<td class="success">3.022s</td>
+<td class="success">CA2_MaquinaNoAdmitida()</td>
+<td class="success">3.106s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">CA3()</td>
-<td class="success">3.016s</td>
+<td class="success">CA3_IdentificacionNoValida()</td>
+<td class="success">3.021s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">CA4_SinRutina()</td>
+<td class="success">3.028s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,137 +102,216 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>17:54:39.755 [Test worker] INFO  UserStory1 - Path: /home/runner/work/core-fitech/core-fitech/validator
-17:54:39.758 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
-17:54:39.760 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
-17:54:39.761 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
-17:54:39.765 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
-17:54:39.767 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
-17:54:39.767 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
-17:54:39.769 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
-17:54:39.770 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
-17:54:39.771 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
-17:54:39.772 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
+<pre>23:54:01.124 [Test worker] INFO  UserStory1 - Path: /home/runner/work/core-fitech/core-fitech/validator
+23:54:01.134 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
+23:54:01.138 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+23:54:01.141 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
+23:54:01.147 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
+23:54:01.149 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
+23:54:01.149 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
+23:54:01.150 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
+23:54:01.152 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
+23:54:01.153 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
+23:54:01.153 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
 Routine agregÃ³ el Observer: services.ValidationTask
 Routine agregÃ³ el Observer: services.ValidationTask
-17:54:39.775 [Test worker] WARN  UserStory1 - Se ejecuta test de CA1 con dato de entrada: Tahiel
-Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
-Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
-Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
-La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
-Routine notifica a services.ValidationTask
-17:54:39.799 [Timer-0] INFO  ValidationTask - Pasó el validador: RoutineValidator
-17:54:39.800 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
-Routine notifica a services.ValidationTask
-17:54:39.800 [Timer-0] INFO  ValidationTask - Pasó el validador: RoutineValidator
-17:54:39.800 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
-El resultado de Routine es: true
-Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
-Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
-Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
-La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
-Routine notifica a services.ValidationTask
-17:54:42.786 [Timer-0] INFO  ValidationTask - Pasó el validador: RoutineValidator
-17:54:42.786 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
-Routine notifica a services.ValidationTask
-17:54:42.786 [Timer-0] INFO  ValidationTask - Pasó el validador: RoutineValidator
-17:54:42.786 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
-El resultado de Routine es: true
-17:54:42.788 [Test worker] INFO  UserStory1 - Path: /home/runner/work/core-fitech/core-fitech/validator
-17:54:42.788 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
-17:54:42.788 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
-17:54:42.789 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
-17:54:42.795 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
-17:54:42.796 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
-17:54:42.797 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
-17:54:42.798 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
-17:54:42.799 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
-17:54:42.800 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
-17:54:42.802 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
-Routine agregÃ³ el Observer: services.ValidationTask
-Routine agregÃ³ el Observer: services.ValidationTask
-17:54:42.807 [Test worker] WARN  UserStory1 - Se ejecuta test de CA2 - con dato de entrada: Evelyn
+23:54:01.159 [Test worker] WARN  UserStory1 - Se ejecuta test de CA2 - con dato de entrada: 'Evelyn'
 Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
 Rutina de Evelyn : [Dominadas, Abdominales, Correr]
 Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-17:54:42.820 [Timer-1] INFO  ValidationTask - Falló el validador: RoutineValidator
-17:54:42.823 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+23:54:01.189 [Timer-0] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:01.190 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
 Routine notifica a services.ValidationTask
-17:54:42.823 [Timer-1] INFO  ValidationTask - Falló el validador: RoutineValidator
-17:54:42.823 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+23:54:01.191 [Timer-0] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:01.193 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
 El resultado de Routine es: false
+Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
+Rutina de Evelyn : [Dominadas, Abdominales, Correr]
+Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:54:04.165 [Timer-0] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:04.166 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+Routine notifica a services.ValidationTask
+23:54:04.166 [Timer-0] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:04.166 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+El resultado de Routine es: false
+23:54:04.191 [Test worker] INFO  UserStory1 - Path: /home/runner/work/core-fitech/core-fitech/validator
+23:54:04.192 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
+23:54:04.192 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+23:54:04.193 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
+23:54:04.197 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
+23:54:04.197 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
+23:54:04.198 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
+23:54:04.199 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
+23:54:04.199 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
+23:54:04.200 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
+23:54:04.202 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
+Routine agregÃ³ el Observer: services.ValidationTask
+Routine agregÃ³ el Observer: services.ValidationTask
+23:54:04.203 [Test worker] WARN  UserStory1 - Se ejecuta test de CA1 con dato de entrada: 'Tahiel'
 Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
 Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
 Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-17:54:45.785 [Timer-0] INFO  ValidationTask - Pasó el validador: RoutineValidator
-17:54:45.785 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
+23:54:04.215 [Timer-1] INFO  ValidationTask - Pasó el validador: RoutineValidator
+23:54:04.215 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
 Routine notifica a services.ValidationTask
-17:54:45.785 [Timer-0] INFO  ValidationTask - Pasó el validador: RoutineValidator
-17:54:45.785 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
+23:54:04.215 [Timer-1] INFO  ValidationTask - Pasó el validador: RoutineValidator
+23:54:04.215 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
 El resultado de Routine es: true
 Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
 Rutina de Evelyn : [Dominadas, Abdominales, Correr]
 Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-17:54:45.809 [Timer-1] INFO  ValidationTask - Falló el validador: RoutineValidator
-17:54:45.810 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+23:54:07.166 [Timer-0] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:07.166 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
 Routine notifica a services.ValidationTask
-17:54:45.810 [Timer-1] INFO  ValidationTask - Falló el validador: RoutineValidator
-17:54:45.810 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+23:54:07.166 [Timer-0] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:07.167 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
 El resultado de Routine es: false
-17:54:45.810 [Test worker] INFO  UserStory1 - Path: /home/runner/work/core-fitech/core-fitech/validator
-17:54:45.810 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
-17:54:45.812 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
-17:54:45.814 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
-17:54:45.818 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
-17:54:45.818 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
-17:54:45.819 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
-17:54:45.819 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
-17:54:45.820 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
-17:54:45.820 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
-17:54:45.821 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
+Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
+Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
+Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:54:07.208 [Timer-1] INFO  ValidationTask - Pasó el validador: RoutineValidator
+23:54:07.208 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
+Routine notifica a services.ValidationTask
+23:54:07.208 [Timer-1] INFO  ValidationTask - Pasó el validador: RoutineValidator
+23:54:07.208 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
+El resultado de Routine es: true
+23:54:07.212 [Test worker] INFO  UserStory1 - Path: /home/runner/work/core-fitech/core-fitech/validator
+23:54:07.212 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
+23:54:07.212 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+23:54:07.213 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
+23:54:07.222 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
+23:54:07.223 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
+23:54:07.223 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
+23:54:07.226 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
+23:54:07.226 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
+23:54:07.227 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
+23:54:07.229 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
 Routine agregÃ³ el Observer: services.ValidationTask
 Routine agregÃ³ el Observer: services.ValidationTask
-17:54:45.823 [Test worker] WARN  UserStory1 - Se ejecuta test de CA3 - con dato de entrada: '' 
+23:54:07.233 [Test worker] WARN  UserStory1 - Se ejecuta test de CA4 - con dato de entrada: 'Joan' 
+Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
+Rutina de Joan : []
+Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:54:07.245 [Timer-2] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:07.245 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+Routine notifica a services.ValidationTask
+23:54:07.246 [Timer-2] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:07.247 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+El resultado de Routine es: false
+Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
+Rutina de Evelyn : [Dominadas, Abdominales, Correr]
+Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:54:10.165 [Timer-0] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:10.165 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+Routine notifica a services.ValidationTask
+23:54:10.165 [Timer-0] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:10.165 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+El resultado de Routine es: false
+Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
+Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
+Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:54:10.208 [Timer-1] INFO  ValidationTask - Pasó el validador: RoutineValidator
+23:54:10.208 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
+Routine notifica a services.ValidationTask
+23:54:10.208 [Timer-1] INFO  ValidationTask - Pasó el validador: RoutineValidator
+23:54:10.209 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
+El resultado de Routine es: true
+Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
+Rutina de Joan : []
+Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:54:10.238 [Timer-2] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:10.238 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+Routine notifica a services.ValidationTask
+23:54:10.238 [Timer-2] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:10.238 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+El resultado de Routine es: false
+23:54:10.239 [Test worker] INFO  UserStory1 - Path: /home/runner/work/core-fitech/core-fitech/validator
+23:54:10.239 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
+23:54:10.240 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+23:54:10.240 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
+23:54:10.244 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
+23:54:10.246 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
+23:54:10.246 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
+23:54:10.247 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
+23:54:10.256 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
+23:54:10.256 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
+23:54:10.256 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
+Routine agregÃ³ el Observer: services.ValidationTask
+Routine agregÃ³ el Observer: services.ValidationTask
+23:54:10.257 [Test worker] WARN  UserStory1 - Se ejecuta test de CA3 - con dato de entrada: '' 
 Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
 Rutina de  : []
 Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-17:54:45.835 [Timer-2] INFO  ValidationTask - Falló el validador: RoutineValidator
-17:54:45.836 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+23:54:10.261 [Timer-3] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:10.262 [Timer-3] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
 Routine notifica a services.ValidationTask
-17:54:45.836 [Timer-2] INFO  ValidationTask - Falló el validador: RoutineValidator
-17:54:45.836 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+23:54:10.264 [Timer-3] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:10.264 [Timer-3] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+El resultado de Routine es: false
+Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
+Rutina de Evelyn : [Dominadas, Abdominales, Correr]
+Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:54:13.165 [Timer-0] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:13.165 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+Routine notifica a services.ValidationTask
+23:54:13.165 [Timer-0] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:13.165 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
 El resultado de Routine es: false
 Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
 Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
 Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-17:54:48.785 [Timer-0] INFO  ValidationTask - Pasó el validador: RoutineValidator
-17:54:48.785 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
+23:54:13.208 [Timer-1] INFO  ValidationTask - Pasó el validador: RoutineValidator
+23:54:13.208 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
 Routine notifica a services.ValidationTask
-17:54:48.785 [Timer-0] INFO  ValidationTask - Pasó el validador: RoutineValidator
-17:54:48.785 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
+23:54:13.208 [Timer-1] INFO  ValidationTask - Pasó el validador: RoutineValidator
+23:54:13.208 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: true?[0m
 El resultado de Routine es: true
 Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
-Rutina de Evelyn : [Dominadas, Abdominales, Correr]
+Rutina de Joan : []
 Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-17:54:48.810 [Timer-1] INFO  ValidationTask - Falló el validador: RoutineValidator
-17:54:48.810 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+23:54:13.237 [Timer-2] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:13.238 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
 Routine notifica a services.ValidationTask
-17:54:48.810 [Timer-1] INFO  ValidationTask - Falló el validador: RoutineValidator
-17:54:48.811 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+23:54:13.238 [Timer-2] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:13.238 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
 El resultado de Routine es: false
 Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
+Rutina de  : []
+Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:54:13.260 [Timer-3] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:13.260 [Timer-3] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+Routine notifica a services.ValidationTask
+23:54:13.260 [Timer-3] INFO  ValidationTask - Falló el validador: RoutineValidator
+23:54:13.260 [Timer-3] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
+El resultado de Routine es: false
 </pre>
 </span>
 </div>
@@ -239,7 +323,7 @@ Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/file
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8</a> at May 31, 2023, 5:54:48 PM</p>
+<a href="http://www.gradle.org">Gradle 6.8</a> at Jun 7, 2023, 11:54:13 PM</p>
 </div>
 </div>
 </body>
