@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class UserStory1 {
 
     private final Logger log = LogManager.getLogger("UserStory1");
-    private Validator routineValidator;
+    private Validator validator;
     private ValidationTask validationTask;
 
     @BeforeEach
@@ -29,33 +29,40 @@ public class UserStory1 {
 
         this.validationTask = new ValidatorFactory(path, machineCode).buildValidationTask();
         Set<Validator> validators = this.validationTask.getValidators();
-        routineValidator = validators.stream().findFirst().get();
+        validator = validators.stream().findFirst().get();
 
         validationTask = new ValidationTask(validators, "Bicicleta1");
     }
 
     @Test
-    public void CA1() throws InterruptedException {
-        log.warn("Se ejecuta test de CA1 con dato de entrada: Tahiel");
-        routineValidator.validate("Tahiel", "Bicicleta1");
+    public void CA1_UsoValido() throws InterruptedException {
+        log.warn("Se ejecuta test de CA1 con dato de entrada: 'Tahiel'");
+        validator.validate("Tahiel", "Bicicleta1");
         Thread.sleep(3000);
-        assertEquals(true, routineValidator.getResult());
+        assertTrue(validator.getResult());
     }
 
     @Test
-    void CA2() throws InterruptedException {
-        log.warn("Se ejecuta test de CA2 - con dato de entrada: Evelyn");
-        routineValidator.validate("Evelyn", "Bicicleta1");
+    void CA2_MaquinaNoAdmitida() throws InterruptedException {
+        log.warn("Se ejecuta test de CA2 - con dato de entrada: 'Evelyn'");
+        validator.validate("Evelyn", "Bicicleta1");
         Thread.sleep(3000);
-        assertEquals(false, routineValidator.getResult());
+        assertFalse(validator.getResult());
     }
 
     @Test
-    void CA3() throws InterruptedException {
+    void CA3_IdentificacionNoValida() throws InterruptedException {
         log.warn("Se ejecuta test de CA3 - con dato de entrada: '' ");
-        routineValidator.validate("", "Bicicleta1");
+        validator.validate("", "Bicicleta1");
         Thread.sleep(3000);
-        assertEquals(false, routineValidator.getResult());
+        assertFalse(validator.getResult());
     }
 
+    @Test
+    void CA4_SinRutina() throws InterruptedException {
+        log.warn("Se ejecuta test de CA4 - con dato de entrada: 'Joan' ");
+        validator.validate("Joan", "Bicicleta1");
+        Thread.sleep(3000);
+        assertFalse(validator.getResult());
+    }
 }
