@@ -37,10 +37,8 @@ jobs:
       - name: Archive HTML test report
         uses: actions/upload-artifact@v2
         with:
-          #name: Test Report
-          name: test-results
-          path: build/reports/tests/test/
-          #path: test/reports
+          name: Test Report
+          path: test/reports
           
       - name: Download Test Results
         uses: actions/download-artifact@v2
