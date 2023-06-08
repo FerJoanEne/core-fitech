@@ -45,14 +45,12 @@ jobs:
       - name: Download Test Results
         uses: actions/download-artifact@v2
         with:
-          name: test-results
-          path: test-results
-          #name: Test Report
-          #path: test/reports
+          name: Test Report
+          path: test/reports
       
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           #publish_dir: test/reports     
-          publish_dir: ./test-results/     
+          publish_dir: ./test/reports     
