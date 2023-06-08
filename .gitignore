@@ -1,0 +1,22 @@
+# Project exclude paths
+.gradle/*
+.gradle
+logs
+logs/
+/.gradle/*
+/build
+/bin
+out/*
+build/classes/java/main/
+.idea
+*.iws
+*.iml
+*.ipr
+# User-specific stuff
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/gradle.xml
+

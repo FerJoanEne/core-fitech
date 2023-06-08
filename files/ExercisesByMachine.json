@@ -1,0 +1,22 @@
+[
+  {
+    "machineCode": "Bicicleta1",
+    "exercises" : ["BicicletaFija"]
+  },
+  {
+    "machineCode" : "Bicicleta2",
+    "exercises" : ["BicicletaFija"]
+  },
+  {
+    "machineCode" : "Cinta1",
+    "exercises" : ["Caminar", "Trotar", "Correr"]
+  },
+  {
+    "machineCode" : "Cinta2",
+    "exercises" : ["Caminar", "Trotar", "Correr"]
+  },
+  {
+    "machineCode" : "BancoAbdominales",
+    "exercises" : [ "Abdominales"]
+  }
+]

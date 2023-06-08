@@ -1,0 +1,22 @@
+[
+  {
+    "username": "Tahiel",
+    "payment" : true
+  },
+  {
+    "username" : "Joan",
+    "payment" : false
+  },
+  {
+    "username" : "Evelyn",
+    "payment" : true
+  },
+  {
+  "username" : "Agustin",
+    "payment" : false
+  },
+  {
+    "username" : "Tony",
+    "payment" : true
+  }
+]
