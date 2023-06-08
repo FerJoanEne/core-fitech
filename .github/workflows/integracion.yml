@@ -4,9 +4,16 @@ on:
     branches:
       - master
       - develop
+      
+permissions:
+  contents: read
+  security-events: write
+  
 jobs:
   build:
+    
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
@@ -15,32 +22,37 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+      #- name: Grant execute permission for gradlew
+       # run: chmod +x gradlew
         
       - name: Build with Gradle
         run: ./gradlew build
         
-      - name: Run tests
-        run: ./gradlew test
+      #- name: Run tests
+       # run: ./gradlew test
         
-      - name: Generate HTML test report
-        run: ./gradlew jacocoTestReport
+      #- name: Generate HTML test report
+       # run: ./gradlew jacocoTestReport
         
       - name: Archive HTML test report
         uses: actions/upload-artifact@v2
         with:
-          name: Test Report
-          path: test/reports
+          #name: Test Report
+          name: test-results
+          path: build/reports/tests/test/
+          #path: test/reports
           
       - name: Download Test Results
         uses: actions/download-artifact@v2
         with:
-          name: Test Report
-          path: test/reports
+          name: test-results
+          path: test-results
+          #name: Test Report
+          #path: test/reports
       
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: test/reports     
+          #publish_dir: test/reports     
+          publish_dir: ./test-results/     
