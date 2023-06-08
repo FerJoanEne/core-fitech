@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.051s</div>
+<div class="counter">0.066s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,17 +79,17 @@
 </thead>
 <tr>
 <td class="success">CA1_UbicacionInexistente()</td>
-<td class="success">0.003s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">CA2_UbicacionInvalida()</td>
-<td class="success">0.003s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">CA3_CarpetaVacia()</td>
-<td class="success">0.008s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -99,12 +99,12 @@
 </tr>
 <tr>
 <td class="success">CA5_ValidacionSimple()</td>
-<td class="success">0.010s</td>
+<td class="success">0.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">CA6_ValidacionesMultiples()</td>
-<td class="success">0.025s</td>
+<td class="success">0.026s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -112,53 +112,42 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>Se buscan Rutinas de Usuarios en: /home/runner/work/core-fitech/core-fitech/files/UsersRoutine.json
-Rutina de  : []
-Se buscan Ejercicios por MÃ¡quina en: /home/runner/work/core-fitech/core-fitech/files/ExercisesByMachine.json
-La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
-Routine notifica a services.ValidationTask
-02:35:10.366 [Timer-3] INFO  ValidationTask - Falló el validador: RoutineValidator
-02:35:10.366 [Timer-3] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
-Routine notifica a services.ValidationTask
-02:35:10.366 [Timer-3] INFO  ValidationTask - Falló el validador: RoutineValidator
-02:35:10.366 [Timer-3] INFO  ValidationTask - ?[31mResultado de la validación es: false?[0m
-El resultado de Routine es: false
-02:35:10.367 [Test worker] WARN  UserStory2 - se ejecuta test de CA4 - NO ES VALIDACION
-02:35:10.368 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
-02:35:10.368 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 0
-02:35:10.370 [Test worker] WARN  UserStory2 - se ejecuta test de CA2 - UBICACION INVALIDA
-02:35:10.379 [Test worker] WARN  UserStory2 - se ejecuta test de CA3 - CARPETA VACIA
-02:35:10.384 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
-02:35:10.385 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 0
-02:35:10.387 [Test worker] WARN  UserStory2 - se ejecuta test de CA6 - VALIDACIONES MULTIPLES
-02:35:10.388 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 2
-02:35:10.388 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
-02:35:10.396 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
-02:35:10.397 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
-02:35:10.397 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
-02:35:10.399 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
-02:35:10.400 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
-02:35:10.400 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
-02:35:10.401 [Test worker] INFO  ValidatorFinder - File encontrado: PaymentValidator-1.0-SNAPSHOT.jar
-02:35:10.404 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 4 - clases [class PaymentValidator$1, class PaymentValidator$2, class PaymentValidator, class services.PaymentFinder] 
-02:35:10.405 [Test worker] WARN  ValidatorFinder - PaymentValidator$1 No asignable
-02:35:10.405 [Test worker] WARN  ValidatorFinder - PaymentValidator$2 No asignable
-02:35:10.406 [Test worker] INFO  ValidatorFinder - PaymentValidator Asignable
-02:35:10.406 [Test worker] WARN  ValidatorFinder - services.PaymentFinder No asignable
-02:35:10.409 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 2
-02:35:10.411 [Test worker] WARN  UserStory2 - cantidad de validators: 2
-02:35:10.416 [Test worker] WARN  UserStory2 - se ejecuta test de CA1 - UBICACION INEXISTENTE
-02:35:10.422 [Test worker] WARN  UserStory2 - se ejecuta test de CA5 - VALIDACION SIMPLE
-02:35:10.422 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
-02:35:10.422 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
-02:35:10.427 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
-02:35:10.427 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
-02:35:10.428 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
-02:35:10.428 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
-02:35:10.429 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
-02:35:10.429 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
-02:35:10.430 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
-02:35:10.430 [Test worker] WARN  UserStory2 - cantidad de validators: 1
+<pre>02:41:54.233 [Test worker] WARN  UserStory2 - se ejecuta test de CA4 - NO ES VALIDACION
+02:41:54.233 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+02:41:54.234 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 0
+02:41:54.243 [Test worker] WARN  UserStory2 - se ejecuta test de CA2 - UBICACION INVALIDA
+02:41:54.249 [Test worker] WARN  UserStory2 - se ejecuta test de CA3 - CARPETA VACIA
+02:41:54.253 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+02:41:54.255 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 0
+02:41:54.266 [Test worker] WARN  UserStory2 - se ejecuta test de CA6 - VALIDACIONES MULTIPLES
+02:41:54.267 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 2
+02:41:54.267 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
+02:41:54.271 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
+02:41:54.272 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
+02:41:54.273 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
+02:41:54.274 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
+02:41:54.275 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
+02:41:54.275 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
+02:41:54.276 [Test worker] INFO  ValidatorFinder - File encontrado: PaymentValidator-1.0-SNAPSHOT.jar
+02:41:54.281 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 4 - clases [class PaymentValidator$1, class PaymentValidator$2, class PaymentValidator, class services.PaymentFinder] 
+02:41:54.282 [Test worker] WARN  ValidatorFinder - PaymentValidator$1 No asignable
+02:41:54.283 [Test worker] WARN  ValidatorFinder - PaymentValidator$2 No asignable
+02:41:54.284 [Test worker] INFO  ValidatorFinder - PaymentValidator Asignable
+02:41:54.285 [Test worker] WARN  ValidatorFinder - services.PaymentFinder No asignable
+02:41:54.286 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 2
+02:41:54.288 [Test worker] WARN  UserStory2 - cantidad de validators: 2
+02:41:54.292 [Test worker] WARN  UserStory2 - se ejecuta test de CA1 - UBICACION INEXISTENTE
+02:41:54.301 [Test worker] WARN  UserStory2 - se ejecuta test de CA5 - VALIDACION SIMPLE
+02:41:54.303 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+02:41:54.304 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
+02:41:54.307 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
+02:41:54.308 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
+02:41:54.308 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
+02:41:54.308 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
+02:41:54.309 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
+02:41:54.309 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
+02:41:54.310 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
+02:41:54.310 [Test worker] WARN  UserStory2 - cantidad de validators: 1
 </pre>
 </span>
 </div>
@@ -170,7 +159,7 @@ El resultado de Routine es: false
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8</a> at Jun 8, 2023, 2:35:10 AM</p>
+<a href="http://www.gradle.org">Gradle 6.8</a> at Jun 8, 2023, 2:41:54 AM</p>
 </div>
 </div>
 </body>
