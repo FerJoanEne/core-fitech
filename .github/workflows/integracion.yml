@@ -31,17 +31,28 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Test Report
-          path: test/reports
+          path: build/reports/tests
+      #- name: Archive HTML test report
+       # uses: actions/upload-artifact@v2
+        #with:
+         # name: Test Report
+          #path: test/reports
           
-      - name: Download Test Results
-        uses: actions/download-artifact@v2
-        with:
-          name: Test Report
-          path: test/reports
+      #- name: Download Test Results
+       # uses: actions/download-artifact@v2
+        #with:
+         # name: Test Report
+          #path: test/reports
       
-      - name: Publish Test Results as Github Pages
+     # - name: Publish Test Results as Github Pages
+      #  uses: peaceiris/actions-gh-pages@v3
+       # with:
+        #    github_token: ${{ secrets.GITHUB_TOKEN }}
+         #   publish_dir: test/reports
+          #  publish_branch: gh-pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: test/reports
-            publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/reports/tests
+          publish_branch: gh-pages
