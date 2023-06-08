@@ -22,7 +22,7 @@ public class UserStory1 {
 
     @BeforeEach
     public void setUp() throws FileNotFoundException {
-        String path = new File("validator").getAbsolutePath();
+        String path = new File("simpleValidator").getAbsolutePath();
         String machineCode = "Bicicleta1";
         log.info("Path: {}", path);
         log.info("MachineCode: {}", machineCode);

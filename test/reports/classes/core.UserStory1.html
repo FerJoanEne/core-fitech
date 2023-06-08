@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">3</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">9.240s</div>
+<div class="counter">13.256s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,18 +78,23 @@
 </tr>
 </thead>
 <tr>
-<td class="success">CA1()</td>
-<td class="success">3.197s</td>
+<td class="success">CA1_UsoValido()</td>
+<td class="success">3.188s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">CA2()</td>
-<td class="success">3.016s</td>
+<td class="success">CA2_MaquinaNoAdmitida()</td>
+<td class="success">3.363s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">CA3()</td>
-<td class="success">3.027s</td>
+<td class="success">CA3_IdentificacionNoValida()</td>
+<td class="success">3.321s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">CA4_SinRutina()</td>
+<td class="success">3.384s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,147 +102,199 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>14:40:04.072 [Test worker] INFO  UserStory1 - Path: C:\Users\besyuser\Proyectos\practica java\core\validator
-14:40:04.087 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
-14:40:04.100 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
-14:40:04.103 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
-14:40:04.112 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
-14:40:04.114 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
-14:40:04.114 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
-14:40:04.115 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
-14:40:04.117 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
-14:40:04.117 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
-14:40:04.117 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
+<pre>23:15:23.478 [Test worker] INFO  UserStory1 - Path: C:\Users\liend\eclipse-workspace\core-fitech\simpleValidator
+23:15:23.499 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
+23:15:23.510 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+23:15:23.514 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
+23:15:23.527 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
+23:15:23.531 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
+23:15:23.533 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
+23:15:23.537 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
+23:15:23.539 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
+23:15:23.539 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
+23:15:23.540 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
 Routine agregÃ³ el Observer: services.ValidationTask
 Routine agregÃ³ el Observer: services.ValidationTask
-14:40:04.134 [Test worker] WARN  UserStory1 - Se ejecuta test de CA1 con dato de entrada: Tahiel
-Se buscan Rutinas de Usuarios en: C:\Users\besyuser\Proyectos\practica java\core\files\UsersRoutine.json
-Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
-Se buscan Ejercicios por MÃ¡quina en: C:\Users\besyuser\Proyectos\practica java\core\files\ExercisesByMachine.json
-La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
-Routine notifica a services.ValidationTask
-14:40:04.165 [Timer-0] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
-14:40:04.166 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
-Routine notifica a services.ValidationTask
-14:40:04.167 [Timer-0] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
-14:40:04.167 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
-El resultado de Routine es: true
-Se buscan Rutinas de Usuarios en: C:\Users\besyuser\Proyectos\practica java\core\files\UsersRoutine.json
-Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
-Se buscan Ejercicios por MÃ¡quina en: C:\Users\besyuser\Proyectos\practica java\core\files\ExercisesByMachine.json
-La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
-Routine notifica a services.ValidationTask
-14:40:07.141 [Timer-0] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
-14:40:07.141 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
-Routine notifica a services.ValidationTask
-14:40:07.142 [Timer-0] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
-14:40:07.142 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
-El resultado de Routine es: true
-14:40:07.154 [Test worker] INFO  UserStory1 - Path: C:\Users\besyuser\Proyectos\practica java\core\validator
-14:40:07.154 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
-14:40:07.155 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
-14:40:07.155 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
-14:40:07.159 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
-14:40:07.159 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
-14:40:07.160 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
-14:40:07.160 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
-14:40:07.160 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
-14:40:07.161 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
-14:40:07.161 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
-Routine agregÃ³ el Observer: services.ValidationTask
-Routine agregÃ³ el Observer: services.ValidationTask
-14:40:07.162 [Test worker] WARN  UserStory1 - Se ejecuta test de CA2 - con dato de entrada: Evelyn
-Se buscan Rutinas de Usuarios en: C:\Users\besyuser\Proyectos\practica java\core\files\UsersRoutine.json
+23:15:23.551 [Test worker] WARN  UserStory1 - Se ejecuta test de CA2 - con dato de entrada: 'Evelyn'
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
 Rutina de Evelyn : [Dominadas, Abdominales, Correr]
-Se buscan Ejercicios por MÃ¡quina en: C:\Users\besyuser\Proyectos\practica java\core\files\ExercisesByMachine.json
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-14:40:07.168 [Timer-1] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
-14:40:07.169 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+23:15:23.591 [Timer-0] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:23.594 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
 Routine notifica a services.ValidationTask
-14:40:07.169 [Timer-1] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
-14:40:07.169 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+23:15:23.602 [Timer-0] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:23.603 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
 El resultado de Routine es: false
-Se buscan Rutinas de Usuarios en: C:\Users\besyuser\Proyectos\practica java\core\files\UsersRoutine.json
-Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
-Se buscan Ejercicios por MÃ¡quina en: C:\Users\besyuser\Proyectos\practica java\core\files\ExercisesByMachine.json
-La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
-Routine notifica a services.ValidationTask
-14:40:10.155 [Timer-0] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
-14:40:10.155 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
-Routine notifica a services.ValidationTask
-14:40:10.155 [Timer-0] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
-14:40:10.155 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
-El resultado de Routine es: true
-Se buscan Rutinas de Usuarios en: C:\Users\besyuser\Proyectos\practica java\core\files\UsersRoutine.json
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
 Rutina de Evelyn : [Dominadas, Abdominales, Correr]
-Se buscan Ejercicios por MÃ¡quina en: C:\Users\besyuser\Proyectos\practica java\core\files\ExercisesByMachine.json
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-14:40:10.171 [Test worker] INFO  UserStory1 - Path: C:\Users\besyuser\Proyectos\practica java\core\validator
-14:40:10.171 [Timer-1] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
-14:40:10.171 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+23:15:26.599 [Timer-0] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:26.603 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
 Routine notifica a services.ValidationTask
-14:40:10.171 [Timer-1] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
-14:40:10.172 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+23:15:26.607 [Timer-0] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:26.610 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
 El resultado de Routine es: false
-14:40:10.172 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
-14:40:10.173 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
-14:40:10.174 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
-14:40:10.179 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
-14:40:10.180 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
-14:40:10.180 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
-14:40:10.180 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
-14:40:10.181 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
-14:40:10.181 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
-14:40:10.181 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
+23:15:26.719 [Test worker] INFO  UserStory1 - Path: C:\Users\liend\eclipse-workspace\core-fitech\simpleValidator
+23:15:26.720 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
+23:15:26.727 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+23:15:26.727 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
+23:15:26.748 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
+23:15:26.750 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
+23:15:26.750 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
+23:15:26.751 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
+23:15:26.780 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
+23:15:26.866 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
+23:15:26.869 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
 Routine agregÃ³ el Observer: services.ValidationTask
 Routine agregÃ³ el Observer: services.ValidationTask
-14:40:10.182 [Test worker] WARN  UserStory1 - Se ejecuta test de CA3 - con dato de entrada: '' 
-Se buscan Rutinas de Usuarios en: C:\Users\besyuser\Proyectos\practica java\core\files\UsersRoutine.json
+23:15:26.885 [Test worker] WARN  UserStory1 - Se ejecuta test de CA1 con dato de entrada: 'Tahiel'
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
+Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:15:27.228 [Timer-1] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
+23:15:27.229 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
+Routine notifica a services.ValidationTask
+23:15:27.291 [Timer-1] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
+23:15:27.301 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
+El resultado de Routine es: true
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
+Rutina de Evelyn : [Dominadas, Abdominales, Correr]
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:15:29.594 [Timer-0] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:29.606 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+Routine notifica a services.ValidationTask
+23:15:29.610 [Timer-0] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:29.614 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+El resultado de Routine es: false
+23:15:29.926 [Test worker] INFO  UserStory1 - Path: C:\Users\liend\eclipse-workspace\core-fitech\simpleValidator
+23:15:29.928 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
+23:15:29.950 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+23:15:29.980 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
+23:15:30.096 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
+23:15:30.099 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
+23:15:30.135 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
+23:15:30.168 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
+23:15:30.211 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
+23:15:30.214 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
+23:15:30.218 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
+Routine agregÃ³ el Observer: services.ValidationTask
+Routine agregÃ³ el Observer: services.ValidationTask
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
+23:15:30.264 [Test worker] WARN  UserStory1 - Se ejecuta test de CA4 - con dato de entrada: 'Joan' 
+Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:15:30.300 [Timer-1] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
+23:15:30.301 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
+Routine notifica a services.ValidationTask
+23:15:30.304 [Timer-1] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
+23:15:30.307 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
+El resultado de Routine es: true
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
+Rutina de Joan : []
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:15:30.545 [Timer-2] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:30.550 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+Routine notifica a services.ValidationTask
+23:15:30.641 [Timer-2] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:30.657 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+El resultado de Routine es: false
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
+Rutina de Evelyn : [Dominadas, Abdominales, Correr]
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:15:32.677 [Timer-0] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:32.689 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+Routine notifica a services.ValidationTask
+23:15:32.700 [Timer-0] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:32.706 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+El resultado de Routine es: false
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
+23:15:33.307 [Test worker] INFO  UserStory1 - Path: C:\Users\liend\eclipse-workspace\core-fitech\simpleValidator
+23:15:33.309 [Test worker] INFO  UserStory1 - MachineCode: Bicicleta1
+23:15:33.314 [Test worker] INFO  ValidatorFinder - Cantidad de archivos listados: 1
+23:15:33.315 [Test worker] INFO  ValidatorFinder - File encontrado: RoutineValidator-1.0-SNAPSHOT.jar
+23:15:33.408 [Test worker] INFO  ValidatorFinder - Lista de Clases Encontradas: size 5 - clases [class RoutineValidator$1, class RoutineValidator$2, class RoutineValidator, class services.ExercisesInMachineFinder, class services.RoutineFinder] 
+23:15:33.411 [Test worker] WARN  ValidatorFinder - RoutineValidator$1 No asignable
+23:15:33.414 [Test worker] WARN  ValidatorFinder - RoutineValidator$2 No asignable
+23:15:33.436 [Test worker] INFO  ValidatorFinder - RoutineValidator Asignable
+23:15:33.441 [Test worker] WARN  ValidatorFinder - services.ExercisesInMachineFinder No asignable
+23:15:33.520 [Test worker] WARN  ValidatorFinder - services.RoutineFinder No asignable
+23:15:33.524 [Test worker] INFO  ValidatorFinder - Cantidad de clases instanciadas: 1
+Routine agregÃ³ el Observer: services.ValidationTask
+Routine agregÃ³ el Observer: services.ValidationTask
+23:15:33.597 [Test worker] WARN  UserStory1 - Se ejecuta test de CA3 - con dato de entrada: '' 
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
+Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
+23:15:33.657 [Timer-1] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
+23:15:33.663 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
+Routine notifica a services.ValidationTask
+23:15:33.677 [Timer-1] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
+23:15:33.683 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
+El resultado de Routine es: true
+Rutina de Joan : []
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
 Rutina de  : []
-Se buscan Ejercicios por MÃ¡quina en: C:\Users\besyuser\Proyectos\practica java\core\files\ExercisesByMachine.json
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-14:40:10.187 [Timer-2] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
-14:40:10.187 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+23:15:33.881 [Timer-2] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:33.884 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
 Routine notifica a services.ValidationTask
-14:40:10.188 [Timer-2] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
-14:40:10.188 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+23:15:33.888 [Timer-2] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:33.889 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
 El resultado de Routine es: false
-Se buscan Rutinas de Usuarios en: C:\Users\besyuser\Proyectos\practica java\core\files\UsersRoutine.json
-Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
-Se buscan Ejercicios por MÃ¡quina en: C:\Users\besyuser\Proyectos\practica java\core\files\ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-14:40:13.166 [Timer-0] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
-14:40:13.166 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
+23:15:33.967 [Timer-3] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:34.007 [Timer-3] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
 Routine notifica a services.ValidationTask
-14:40:13.166 [Timer-0] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
-14:40:13.166 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
-El resultado de Routine es: true
-Se buscan Rutinas de Usuarios en: C:\Users\besyuser\Proyectos\practica java\core\files\UsersRoutine.json
+23:15:34.084 [Timer-3] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:34.179 [Timer-3] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+El resultado de Routine es: false
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
 Rutina de Evelyn : [Dominadas, Abdominales, Correr]
-Se buscan Ejercicios por MÃ¡quina en: C:\Users\besyuser\Proyectos\practica java\core\files\ExercisesByMachine.json
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-14:40:13.182 [Timer-1] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
-14:40:13.183 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+23:15:35.614 [Timer-0] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:35.618 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
 Routine notifica a services.ValidationTask
-14:40:13.183 [Timer-1] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
-14:40:13.183 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+23:15:35.624 [Timer-0] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
+23:15:35.628 [Timer-0] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
 El resultado de Routine es: false
-Se buscan Rutinas de Usuarios en: C:\Users\besyuser\Proyectos\practica java\core\files\UsersRoutine.json
-Rutina de  : []
-Se buscan Ejercicios por MÃ¡quina en: C:\Users\besyuser\Proyectos\practica java\core\files\ExercisesByMachine.json
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
+Rutina de Tahiel : [Abdominales, Dominadas, BicicletaFija]
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
 La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
 Routine notifica a services.ValidationTask
-14:40:13.198 [Timer-2] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
-14:40:13.198 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
+23:15:36.307 [Timer-1] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
+23:15:36.307 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
 Routine notifica a services.ValidationTask
-14:40:13.198 [Timer-2] INFO  ValidationTask - FallÃ³ el validador: RoutineValidator
-14:40:13.198 [Timer-2] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: false?[0m
-El resultado de Routine es: false
+23:15:36.308 [Timer-1] INFO  ValidationTask - PasÃ³ el validador: RoutineValidator
+23:15:36.309 [Timer-1] INFO  ValidationTask - ?[31mResultado de la validaciÃ³n es: true?[0m
+El resultado de Routine es: true
+Se buscan Rutinas de Usuarios en: C:\Users\liend\eclipse-workspace\core-fitech\files\UsersRoutine.json
+Rutina de Joan : []
+Se buscan Ejercicios por MÃ¡quina en: C:\Users\liend\eclipse-workspace\core-fitech\files\ExercisesByMachine.json
+La mÃ¡quina Bicicleta1 permite hacer: [BicicletaFija]
+Routine notifica a services.ValidationTask
 </pre>
 </span>
 </div>
@@ -249,7 +306,7 @@ El resultado de Routine es: false
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8</a> at 31-may-2023 14:40:13</p>
+<a href="http://www.gradle.org">Gradle 6.8</a> at 07/06/2023 23:15:37</p>
 </div>
 </div>
 </body>
