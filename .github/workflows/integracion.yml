@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Test Report
-          path: build/reports/tests
+          path: test/reports
           
       - name: Download Test Results
         uses: actions/download-artifact@v2
@@ -43,5 +43,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: build/reports/tests
+            publish_dir: test/reports
             publish_branch: gh-pages
